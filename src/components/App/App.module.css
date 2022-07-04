@@ -6,3 +6,27 @@
   border-radius: 10px;
   box-shadow: 3px 3px 5px darkred;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid darkred;
+}
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: black;
+}
+
+.activeLink {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 800;
+  color: darkred;
+}
+
+
+    

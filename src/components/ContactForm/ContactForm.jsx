@@ -1,18 +1,15 @@
 import React from 'react';
 import { FcTwoSmartphones } from 'react-icons/fc';
 import { Formik, Form, Field } from 'formik';
-import { useAddContactMutation } from 'services/api';
-import { getContacts } from 'redux/selectors';
-import { useSelector } from 'react-redux';
+import { useAddContactMutation,useGetContactsQuery } from 'services/api';
 import { toast } from 'react-hot-toast';
 import s from './ContactForm.module.css';
 
 const ContactForm = () => {
   const [addContact, { isLoading }] = useAddContactMutation();
-  const contacts = useSelector(getContacts);
-
+  const contacts = useGetContactsQuery();
   const handleSubmit = ({ name, number }, { resetForm }) => {
-    const isContact = contacts?.find(
+    const isContact = contacts.data?.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (isContact) {
