@@ -22,7 +22,6 @@ const Register = () => {
             className={s.input}
             type="text"
             name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             required
           />
         </label>
@@ -45,7 +44,6 @@ const Register = () => {
           />
                 </label>            
         <button className={s.btn} type="submit">Register
-          {/* {isLoading ? <span>Loading...</span> : <span>Add contact</span>} */}
         </button>
       </Form>
     </Formik>      

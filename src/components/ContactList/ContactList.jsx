@@ -27,13 +27,13 @@ const ContactList = () => {
     <ul className={s.list}>
       {contacts &&
         !isFetching &&
-        contacts.map(({ id, name, phone }) => (
+        contacts.map(({ id, name, number }) => (
           <li className={s.contact} key={id}>
             <span>
               <FcBusinessman />
             </span>
             <p>{name}:</p>
-            <p>{phone}</p>
+            <p>{number}</p>
             <button
               className={s.btn}
               type="button"
