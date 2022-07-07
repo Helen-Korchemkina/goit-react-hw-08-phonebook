@@ -1,15 +1,14 @@
 .link {
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px;
-    font-weight: 700;
-    color: black;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: black;
 }
-
 .activeLink {
-    display: inline-block;
-    text-decoration: none;
-    padding: 12px;
-    font-weight: 800;
-    color: darkred;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 800;
+  color: darkred;
 }

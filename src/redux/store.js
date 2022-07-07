@@ -18,7 +18,7 @@ const persistAuthConfig = {
   key: 'auth',
   storage,
   whitelist: ['token'],
-}
+};
 
 const store = configureStore({
   reducer: {
@@ -28,9 +28,9 @@ const store = configureStore({
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware().concat(contactsApi.middleware),
-      serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
+  serializableCheck: {
+    ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  },
 });
 
 const persistor = persistStore(store);

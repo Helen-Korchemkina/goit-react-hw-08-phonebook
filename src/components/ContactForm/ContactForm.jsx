@@ -1,8 +1,9 @@
 import React from 'react';
 import { FcTwoSmartphones } from 'react-icons/fc';
 import { Formik, Form, Field } from 'formik';
-import { useAddContactMutation,useGetContactsQuery } from 'services/api';
+import { useAddContactMutation, useGetContactsQuery } from 'services/api';
 import { toast } from 'react-hot-toast';
+import Button from 'react-bootstrap/esm/Button';
 import s from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -47,10 +48,11 @@ const ContactForm = () => {
             required
           />
         </label>
-        <button className={s.btn} type="submit">
-          {isLoading ? <span>Loading...</span> : <span>Add contact</span>}
+        <Button className={s.btn} variant="outline-danger" type="submit">
+          {' '}
+          {isLoading ? <span>Loading...</span> : <span>Add contact</span>}{' '}
           <FcTwoSmartphones />
-        </button>
+        </Button>
       </Form>
     </Formik>
   );

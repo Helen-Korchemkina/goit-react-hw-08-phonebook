@@ -10,6 +10,7 @@
 }
 .contact p {
   margin-right: 12px;
+  margin-bottom: 0;
 }
 .contact span {
   margin-right: 8px;
@@ -19,17 +20,14 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-radius: 5px;
-  height: 30px;
-  width: 80px;
+}
+
+.btn span {
+  margin-right: 5px;
 }
 
 .btn:hover,
 .btn:focus {
   color: aliceblue;
   background-color: darkred;
-}
-
-.btn span {
-  margin-right: 5px;
 }

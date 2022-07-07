@@ -4,8 +4,10 @@ import { getFilter } from 'redux/selectors';
 import { useGetContactsQuery, useDeleteContactsMutation } from 'services/api';
 import { FcFullTrash, FcBusinessman } from 'react-icons/fc';
 import Loader from 'components/Loader/Loader';
-import s from './ContactList.module.css';
 import toast from 'react-hot-toast';
+import Button from 'react-bootstrap/esm/Button';
+import { ListGroup } from 'react-bootstrap';
+import s from './ContactList.module.css';
 
 const ContactList = () => {
   const [deleteContact, { isLoading: isDeliting }] =
@@ -17,36 +19,37 @@ const ContactList = () => {
     ?.map(item => item.name.toLowerCase().includes(normalizedFilter) && item)
     .filter(item => item !== false)
     .sort((a, b) => a.name.localeCompare(b.name));
-  
+
   const onDeleteContact = (id, name) => {
     deleteContact(id);
-    toast.success(`Contact ${name} has been deleted`)
-  }
+    toast.success(`Contact ${name} has been deleted`);
+  };
 
   return (
-    <ul className={s.list}>
+    <ListGroup className={s.list}>
       {contacts &&
         !isFetching &&
         contacts.map(({ id, name, number }) => (
-          <li className={s.contact} key={id}>
+          <ListGroup.Item className={s.contact} key={id}>
             <span>
               <FcBusinessman />
             </span>
             <p>{name}:</p>
             <p>{number}</p>
-            <button
-              className={s.btn}
+            <Button
               type="button"
+              className={s.btn}
               onClick={() => onDeleteContact(id, name)}
               disabled={isDeliting}
+              variant="outline-danger"
             >
-              {isDeliting ? <span>Deliting...</span> : <span>Delete</span>}{' '}
-              <FcFullTrash />
-            </button>
-          </li>
+              {isDeliting ? <span>Deliting...</span> : <span>Delete</span>}
+              <FcFullTrash className={s.icon} />
+            </Button>
+          </ListGroup.Item>
         ))}
       {isFetching === true && <Loader />}
-    </ul>
+    </ListGroup>
   );
 };
 
