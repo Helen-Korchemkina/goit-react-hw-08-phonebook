@@ -6,9 +6,9 @@ const HomePage = () => (
     <h1 className={s.title}>
       Welcome to <span className={s.logo}>Phonebook</span>! <br />
       <NavLink className={s.link} to="/register">
-        Register
+        Register  
       </NavLink>
-      or
+      or  
       <NavLink className={s.link} to="/login">
         login
       </NavLink>
