@@ -16,7 +16,7 @@ const Login = () => {
   return (
     <Formik initialValues={{ email: '', password: '' }} onSubmit={handleSubmit}>
       <Form className={s.form}>
-        <h1>Login page</h1>
+        <h2>Login page</h2>
         <label className={s.label}>
           Email
           <Field className={s.input} type="email" name="email" required />

@@ -19,7 +19,7 @@ const Register = () => {
       onSubmit={handleSubmit}
     >
       <Form className={s.form}>
-        <h1>Register page</h1>
+        <h2>Register page</h2>
         <label className={s.label}>
           Name
           <Field className={s.input} type="text" name="name" required />

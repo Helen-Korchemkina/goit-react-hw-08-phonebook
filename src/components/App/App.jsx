@@ -7,9 +7,8 @@ import AuthNav from 'components/AuthNav/AuthNav';
 import { restart } from 'services/auth-operations';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
 import PublicRoute from 'components/PublicRoute/PublicRoute';
-import { Navbar, Container, Nav } from 'react-bootstrap';
-import s from './App.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import s from './App.module.css';
 
 const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
 const Register = lazy(() => import('../../pages/Register/Register'));
@@ -26,12 +25,7 @@ const App = () => {
 
   return (
     <div className={s.form}>
-      <header>
-        <Navbar className={s.header} bg="light" expand="lg">
-          <Container>
-            <Navbar.Toggle aria-controls="pb-navbar-nav" />
-            <Nav>
-              <Nav.Item as="ul">
+      <header className={s.header} >
                 <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -40,9 +34,7 @@ const App = () => {
                 >
                   Home
                 </NavLink>
-              </Nav.Item>
               {isLoggedIn && (
-                <Nav.Item>
                   <NavLink
                     to="/contacts"
                     className={({ isActive }) =>
@@ -51,14 +43,11 @@ const App = () => {
                   >
                     Contacts
                   </NavLink>
-                </Nav.Item>
               )}
               <div className={s.authnav}>
                 {isLoggedIn ? <UserMenu /> : <AuthNav />}
               </div>
-            </Nav>
-          </Container>
-        </Navbar>
+
       </header>
 
       <Suspense fallback={<div>Loading...</div>}>

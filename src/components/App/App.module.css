@@ -8,6 +8,8 @@
 }
 .header {
   border-bottom: 1px solid darkred;
+  display: flex;
+  justify-content: space-between;
 }
 .link {
   display: inline-block;
